@@ -18,11 +18,11 @@ body {
   color: #fff !important;
 }
 
-table-dark {
+.table-dark {
   color: #fff;
 }
 
-.list-gourp-item {
+.list-group-item {
   border-color: #fff;
   background-color: #000;
 }
