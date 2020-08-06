@@ -14,6 +14,19 @@ class ProfileController extends Controller
     
     public function create()
     {
+        
+        //↓ここの記述の意味をよく理解してないので
+        //NewsControllerを真似て書きました
+        $this->validate($request, Profile::$rules);
+        
+        $profile = new Profilee;
+        $form = $request->all();
+        
+        unset($form['_token']);
+        
+        $profile->fill($form);
+        $profile->save();
+        
         return redirect('admin/profile/create');
     }
     
