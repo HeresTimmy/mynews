@@ -24,7 +24,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md gender-select">
-                            <select>
+                            <select name="gender">
                                 <option>未選択</option>
                                 <option>男</option>
                                 <option>女</option>
@@ -44,6 +44,8 @@
                             <textarea class="form-control" name="introduction" rows="10" value="{{ old('introduction') }}"></textarea></textarea>
                         </div>
                     </div>
+                    {{ csrf_field() }}
+                    <input type="submit" class="btn btn-primary" value="作成">
                 </form>
             </div>
         </div>
