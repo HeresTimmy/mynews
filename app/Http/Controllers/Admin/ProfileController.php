@@ -5,21 +5,19 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Profile;
+
 class ProfileController extends Controller
 {
-    public function add()
-    {
+    public function add() {
         return view('admin.profile.create');
     }
     
-    public function create()
-    {
+    public function create(Request $request) {
         
-        //↓ここの記述の意味をよく理解してないので
-        //NewsControllerを真似て書きました
         $this->validate($request, Profile::$rules);
         
-        $profile = new Profilee;
+        $profile = new Profile;
         $form = $request->all();
         
         unset($form['_token']);
