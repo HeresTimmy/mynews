@@ -25,10 +25,10 @@
                         <label class="col-md-2">性別</label>
                         <div class="col-md gender-select">
                             <select name="gender">
-                                <option>未選択</option>
-                                <option>男</option>
-                                <option>女</option>
-                                <option>その他</option>
+                                <option name="sex" value="notselected">未選択</option>
+                                <option name="sex" value="male">男</option>
+                                <option name="sex" value="female">女</option>
+                                <option name="sex" value="other">その他</option>
                             </select>
                         </div>
                     </div>
