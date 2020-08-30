@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>プロフィール編集</h2>
-                <form action="{{ action('Admin\ProfileController@create') }}" method="post" enctype="multipart/from-data">
+                <form action="{{ action('Admin\ProfileController@edit') }}" method="post" enctype="multipart/from-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -15,6 +15,7 @@
                             @endforeach
                         </ul>
                     @endif
+                    <input type="hidden" name="id" value="{{ $profile_form->id }}">
                     <div class="form-group row">
                         <label class="col-md-2">氏名</label>
                         <div class="col-md-8">
