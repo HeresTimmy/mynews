@@ -26,10 +26,10 @@
                         <label class="col-md-2">性別</label>
                         <div class="col-md gender-select">
                             <select name="gender">
-                                <option>未選択</option>
-                                <option>男</option>
-                                <option>女</option>
-                                <option>その他</option>
+                                <option {{ $profile_form->gender == '未選択' ? 'selected' : '' }} >未選択</option>
+                                <option {{ $profile_form->gender == '男' ? 'selected' : '' }} >男</option>
+                                <option {{ $profile_form->gender == '女' ? 'selected' : '' }} >女</option>
+                                <option {{ $profile_form->gender == 'その他' ? 'selected' : '' }} >その他</option>
                             </select>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">自己紹介欄</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="10">{{ $profile_form->introduction }}</textarea></textarea>
+                            <textarea class="form-control" name="introduction" rows="10">{{ $profile_form->introduction }}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}
