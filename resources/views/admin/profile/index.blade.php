@@ -35,6 +35,7 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">名前</th></th>
                                 <th width="50%">性別</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,6 +44,14 @@
                                     <th>{{ $profile->id }}</th>
                                     <td>{{ \Str::limit($profile->name, 100) }}</td>
                                     <td>{{ \Str::limit($profile->gender, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\ProfileController@delete', ['id' => $profile->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
