@@ -33,13 +33,13 @@ class ProfileController extends Controller
     }
     
     public function index(Request $request) {
-        $cond_title = $request->cond_title;
-        if ($cond_title != '') {
-        $posts = Profile::where('title', $cond_title)->get();
-    } else {
-        $posts = Profile::all();
-    }
-    return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        $cond_name = $request->cond_name;
+        if ($cond_name != '') {
+            $posts = Profile::where('name', $cond_name)->get();
+        } else {
+            $profiles = Profile::all();
+        }
+        return view('admin.profile.index', ['profiles' => $profiles, 'cond_name' => $cond_name]);
     }
     
     public function edit(Request $request) {
